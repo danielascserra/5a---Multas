@@ -32,7 +32,13 @@
             @Html.DisplayFor(modelItem => item.Esquadra)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Fotografia)
+            @*
+        mostra o conteudo do campo Fotografia
+        Html.DisplayFor(modelItem => item.Fotografia)*@
+            @*quero mostrar a imagem do agente*@
+        
+            <img src="~/imagens/@item.Fotografia" height="50"  />
+
         </td>
         <td>
             <!--adiciona ao comando editar, uma acao que invoca o metodo edit, qual o agente que vai ser editado? id=item.ID, refere-se ao id do agente-->
