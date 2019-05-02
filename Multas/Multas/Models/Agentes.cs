@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,8 +11,12 @@ namespace Multas.Models
         //id, nome, esquadra, foto
         public int ID { get; set; }
 
+        [Required (ErrorMessage ="Por favor, escreva o nome do Agente.")]
+        [RegularExpression("([A-ZÁÉÍÓÚÄËÏÖÜa-záéíóúàèùìòõãôâüäöïëçñ]+( |-|')?)+", ErrorMessage = "Só pode escrever letras no nome. Deve começar por uma maiuscula.")]
         public string Nome { get; set; }
 
+        [Required (ErrorMessage ="Não se esqueça de indicar a Esquadra onde o Agente trabalha, por favor.")]
+        //[RegularExpression ("(Tomar|Ourém|Torres Novas|Lisboa|Leiria)")]
         public string Esquadra { get; set; }
 
         public string Fotografia { get; set; }
