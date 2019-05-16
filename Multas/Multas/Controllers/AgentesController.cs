@@ -55,6 +55,7 @@ namespace Multas.Controllers
                 //return HttpNotFound();
                 return RedirectToAction("Index");
             }
+            //envia para a view os dados do agente que foi procurado e encontrado
             return View(agente);
         }
 
@@ -154,6 +155,7 @@ namespace Multas.Controllers
             Session["Agente"] = agentes.ID;
 
             //mostra na View os dados do Agente
+
             return View(agentes);
         }
 
@@ -201,6 +203,7 @@ namespace Multas.Controllers
                     "Provavelmente , tem multas associadas a ele...");
 
                 // redirecionar para a página onde o erro foi gerado.
+                
                 return View(agente);
 
             }
