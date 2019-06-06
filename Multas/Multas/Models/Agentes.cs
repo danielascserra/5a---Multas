@@ -37,6 +37,6 @@ namespace Multas.Models
         //adicionar uma chave forasteira para a tabela de autenticação
         //[Required]
         public string UserNameId { get; set; }
-
+        public string UsernameId { get; internal set; }
     }
 }
