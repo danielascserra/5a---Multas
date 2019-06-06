@@ -32,5 +32,11 @@ namespace Multas.Models
         //virtual- cria um agente e atribui as multas associadas a ele.
         public virtual ICollection<Multas> ListaDasMultas { get; set; }
 
+
+        //******************************************************************
+        //adicionar uma chave forasteira para a tabela de autenticação
+        //[Required]
+        public string UserNameId { get; set; }
+
     }
 }

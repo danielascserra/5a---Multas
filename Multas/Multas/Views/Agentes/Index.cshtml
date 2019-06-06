@@ -6,6 +6,7 @@
 
 <h2>Listagem de Agentes</h2>
 
+@if(User.IsInRole("RecursosHumanos"))
 <p>
     @Html.ActionLink("Criar novo agente", "Create")
 </p>
@@ -41,10 +42,18 @@
 
         </td>
         <td>
-            <!--adiciona ao comando editar, uma acao que invoca o metodo edit, qual o agente que vai ser editado? id=item.ID, refere-se ao id do agente-->
-            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Apagar", "Delete", new { id=item.ID })
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID })
+            @if (User.IsInRole("RecursosHumanos"))
+            {
+            <span>
+                <!--adiciona ao comando editar, uma acao que invoca o metodo edit, qual o agente que vai ser editado? id=item.ID, refere-se ao id do agente-->
+                |
+                @Html.ActionLink("Editar", "Edit", new { id = item.ID })
+                |
+                @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+            </span>
+            }
+
         </td>
     </tr>
 }

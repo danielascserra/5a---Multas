@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Multas.Controllers
 {
-    [Authorize]
+    [Authorize] //todos os utlizadores devem estar autenticados
     public class AccountController : Controller
     {
         public AccountController()
@@ -38,7 +38,8 @@ namespace Multas.Controllers
         //
         // GET: /Account/Login
         [HttpGet]
-        [AllowAnonymous]
+        [AllowAnonymous] // deixa cair a obrigatoriedade
+        //pq está mais perto do metodo
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
